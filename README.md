@@ -67,85 +67,148 @@
         <div class="muted">Cập nhật: <strong id="updated">—</strong></div>
       </div>
     </div>
-    <!-- Các control (fix rung, fix lố, tăng nhạy, giảm delay, smoothing) -->
-    <div class="section grid" role="group" aria-label="Các thiết lập chính">
-      <div class="control" aria-labelledby="stability">
-        <h4 id="stability">Fix rung</h4>
-        <div class="muted">Giảm rung mô phỏng: điều chỉnh mức ổn định hiển thị</div>
+
+    <!-- Các control -->
+    <div class="section grid">
+      <div class="control">
+        <h4>Fix rung</h4>
+        <div class="muted">Giảm rung mô phỏng</div>
         <div class="row" style="margin-top:12px;">
           <div style="flex:1; margin-right:12px;">
-            <input id="stabilityRange" type="range" min="0" max="100" value="40" aria-label="Mức ổn định">
+            <input id="stabilityRange" type="range" min="0" max="100" value="40">
             <div class="muted" style="margin-top:6px">Mức: <span id="stabilityVal" class="val">40</span></div>
           </div>
-          <div>
-            <div id="stabilityToggle" class="toggle" role="switch" aria-checked="false" tabindex="0"><div class="knob"></div></div>
-          </div>
+          <div><div id="stabilityToggle" class="toggle"><div class="knob"></div></div></div>
         </div>
       </div>
 
-      <div class="control" aria-labelledby="overcorrection">
-        <h4 id="overcorrection">Fix lố</h4>
-        <div class="muted">Giảm phản hồi quá mức — điều chỉnh ngưỡng</div>
+      <div class="control">
+        <h4>Fix lố</h4>
+        <div class="muted">Giảm phản hồi quá mức</div>
         <div class="row" style="margin-top:12px;">
           <div style="flex:1; margin-right:12px;">
-            <input id="overRange" type="range" min="0" max="100" value="30" aria-label="Ngưỡng">
+            <input id="overRange" type="range" min="0" max="100" value="30">
             <div class="muted" style="margin-top:6px">Ngưỡng: <span id="overVal" class="val">30</span></div>
           </div>
-          <div>
-            <div id="overToggle" class="toggle" role="switch" aria-checked="false" tabindex="0"><div class="knob"></div></div>
-          </div>
+          <div><div id="overToggle" class="toggle"><div class="knob"></div></div></div>
         </div>
       </div>
 
-      <div class="control" aria-labelledby="sensitivity">
-        <h4 id="sensitivity">Độ nhạy</h4>
-        <div class="muted">Tinh chỉnh độ nhạy (mô phỏng)</div>
+      <div class="control">
+        <h4>Độ nhạy</h4>
+        <div class="muted">Tinh chỉnh độ nhạy</div>
         <div class="row" style="margin-top:12px;">
           <div style="flex:1; margin-right:12px;">
-            <input id="sensiRange" type="range" min="1" max="200" value="70" aria-label="Độ nhạy">
+            <input id="sensiRange" type="range" min="1" max="200" value="70">
             <div class="muted" style="margin-top:6px">Mức: <span id="sensiVal" class="val">70</span></div>
           </div>
-          <div>
-            <div id="sensiToggle" class="toggle" role="switch" aria-checked="true" tabindex="0"><div class="knob"></div></div>
-          </div>
+          <div><div id="sensiToggle" class="toggle on"><div class="knob"></div></div></div>
         </div>
       </div>
 
-      <div class="control" aria-labelledby="delay">
-        <h4 id="delay">Giảm delay</h4>
-        <div class="muted">Tăng tần suất mô phỏng làm mới (không can thiệp)</div>
+      <div class="control">
+        <h4>Giảm delay</h4>
+        <div class="muted">Tăng tần suất làm mới (mô phỏng)</div>
         <div class="row" style="margin-top:12px;">
           <div style="flex:1; margin-right:12px;">
-            <input id="delayRange" type="range" min="0" max="500" value="120" aria-label="Delay (ms)">
+            <input id="delayRange" type="range" min="0" max="500" value="120">
             <div class="muted" style="margin-top:6px">Delay (ms): <span id="delayVal" class="val">120</span></div>
           </div>
-          <div>
-            <div id="delayToggle" class="toggle" role="switch" aria-checked="false" tabindex="0"><div class="knob"></div></div>
-          </div>
+          <div><div id="delayToggle" class="toggle"><div class="knob"></div></div></div>
         </div>
       </div>
     </div>
 
     <div class="section">
-      <h4>Chế độ smoothing (mô phỏng)</h4>
-      <div class="muted">Làm mượt độ chuyển tiếp giữa các bước mô phỏng</div>
-      <div style="margin-top:10px" class="control">
+      <h4>Chế độ smoothing</h4>
+      <div class="muted">Làm mượt chuyển tiếp</div>
+      <div class="control" style="margin-top:10px">
         <div class="row">
           <div style="flex:1">
             <input id="smoothRange" type="range" min="0" max="20" value="6">
             <div class="muted" style="margin-top:6px">Smoothing: <span id="smoothVal" class="val">6</span></div>
           </div>
           <div style="width:110px; text-align:right">
-            <div class="chip">Mode: <strong id="modeText" style="margin-left:8px">Standard</strong></div>
+            <div class="chip">Mode: <strong id="modeText">Standard</strong></div>
           </div>
         </div>
       </div>
     </div>
 
-    <div class="section" style="display:flex; gap:10px; align-items:center; justify-content:space-between">
+    <div class="section" style="display:flex; justify-content:space-between; align-items:center">
       <div class="muted">Trạng thái mô phỏng</div>
       <div class="status">
         <div class="dot ok" id="dotSim"></div><div class="muted" id="simText">Inactive</div>
       </div>
     </div>
   </div>
+
+  <div class="panel-right">
+    <div class="card">
+      <h4>Quản lý cấu hình</h4>
+      <div class="muted">Lưu, xuất và nhập cấu hình JSON.</div>
+      <div class="buttons">
+        <button id="btnSave" class="btn primary">Lưu</button>
+        <button id="btnReset" class="btn">Đặt lại</button>
+        <button id="btnExport" class="btn">Xuất JSON</button>
+        <label for="fileImport" class="btn" style="cursor:pointer">Nhập JSON</label>
+        <input type="file" id="fileImport" accept=".json" style="display:none" />
+      </div>
+      <details style="margin-top:12px">
+        <summary class="muted">Xem cấu hình hiện tại</summary>
+        <pre id="cfgBox">{}</pre>
+      </details>
+      <div class="footer">
+        <div>Author: <strong>Sizuma</strong></div>
+        <div class="muted" style="margin-top:8px">Mục đích: demo — không can thiệp phần mềm</div>
+        <div style="margin-top:10px; display:flex; gap:8px; align-items:center">
+          <div class="muted">Last saved:</div><div id="lastSaved" class="muted">—</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+// helper
+const $ = s=>document.querySelector(s);
+function setToggle(el,on){el.classList[on?'add':'remove']('on');}
+function toast(msg){let d=document.createElement('div');d.textContent=msg;
+d.style.position='fixed';d.style.right='18px';d.style.bottom='18px';d.style.background='#061426';
+d.style.color='#cfeefd';d.style.padding='10px 14px';d.style.borderRadius='8px';
+document.body.appendChild(d);setTimeout(()=>{d.remove()},2000);}
+
+// elements
+const cfgBox=$('#cfgBox'),lastSaved=$('#lastSaved');
+const stR=$('#stabilityRange'),stV=$('#stabilityVal'),stT=$('#stabilityToggle');
+const ovR=$('#overRange'),ovV=$('#overVal'),ovT=$('#overToggle');
+const seR=$('#sensiRange'),seV=$('#sensiVal'),seT=$('#sensiToggle');
+const deR=$('#delayRange'),deV=$('#delayVal'),deT=$('#delayToggle');
+const smR=$('#smoothRange'),smV=$('#smoothVal');
+function getCfg(){
+ return {stability:+stR.value,stOn:stT.classList.contains('on'),
+         over:+ovR.value,ovOn:ovT.classList.contains('on'),
+         sensi:+seR.value,seOn:seT.classList.contains('on'),
+         delay:+deR.value,deOn:deT.classList.contains('on'),
+         smooth:+smR.value,updated:new Date().toISOString()}
+}
+function load(){let c=JSON.parse(localStorage.getItem('menuCfg')||'{}');
+ if(c.stability){stR.value=c.stability;stV.textContent=c.stability;setToggle(stT,c.stOn);}
+ if(c.over){ovR.value=c.over;ovV.textContent=c.over;setToggle(ovT,c.ovOn);}
+ if(c.sensi){seR.value=c.sensi;seV.textContent=c.sensi;setToggle(seT,c.seOn);}
+ if(c.delay){deR.value=c.delay;deV.textContent=c.delay;setToggle(deT,c.deOn);}
+ if(c.smooth){smR.value=c.smooth;smV.textContent=c.smooth;}
+ cfgBox.textContent=JSON.stringify(c,null,2);lastSaved.textContent=c.updated||'—';}
+[stR,ovR,seR,deR,smR].forEach(inp=>inp.oninput=()=>{$('#'+inp.id.replace('Range','Val')).textContent=inp.value});
+[stT,ovT,seT,deT].forEach(t=>t.onclick=()=>setToggle(t,!t.classList.contains('on')));
+$('#btnSave').onclick=()=>{let c=getCfg();localStorage.setItem('menuCfg',JSON.stringify(c));cfgBox.textContent=JSON.stringify(c,null,2);lastSaved.textContent=c.updated;toast('Đã lưu');}
+$('#btnReset').onclick=()=>{localStorage.removeItem('menuCfg');load();toast('Đã reset');}
+$('#btnExport').onclick=()=>{let c=localStorage.getItem('menuCfg')||'{}';
+ let blob=new Blob([c],{type:'application/json'});let a=document.createElement('a');
+ a.href=URL.createObjectURL(blob);a.download='menu-config.json';a.click();toast('Đã xuất JSON');}
+$('#fileImport').onchange=e=>{let f=e.target.files[0];if(!f)return;let r=new FileReader();
+ r.onload=()=>{try{localStorage.setItem('menuCfg',r.result);load();toast('Đã nhập JSON')}catch(e){toast('File lỗi')}};r.readAsText(f);}
+load();
+</script>
+</body>
+</html>
