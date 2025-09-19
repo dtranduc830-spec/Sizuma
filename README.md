@@ -1,11 +1,9 @@
-# Sizuma
 <!doctype html>
 <html lang="vi">
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
 <title>MENU CHÍNH — Bộ cài đặt (Mô phỏng)</title>
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%236b8cff'/%3E%3Ctext x='50' y='57' font-size='44' text-anchor='middle' fill='white' font-family='Arial' font-weight='700'%3EM%3C/text%3E%3C/svg%3E">
 <style>
   :root{
     --bg1: #071025; --bg2:#0b1726; --card:#0f1b2a;
@@ -69,16 +67,3 @@
         <div class="muted">Cập nhật: <strong id="updated">—</strong></div>
       </div>
     </div>
-
-    <!-- Các control (fix rung, fix lố, tăng nhạy, giảm delay, smoothing...) -->
-    <!-- ... (phần còn lại code giống file mình đã gửi trong sandbox, giữ nguyên chức năng toggle, slider, lưu config, export JSON, import JSON) -->
-
-  </div>
-</div>
-
-<script>
-// JavaScript quản lý cấu hình (lưu localStorage, export/import JSON)
-// ... (đầy đủ code như bản sandbox menu-final.html)
-</script>
-</body>
-</html>
