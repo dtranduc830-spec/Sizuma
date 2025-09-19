@@ -67,3 +67,85 @@
         <div class="muted">Cập nhật: <strong id="updated">—</strong></div>
       </div>
     </div>
+    <!-- Các control (fix rung, fix lố, tăng nhạy, giảm delay, smoothing) -->
+    <div class="section grid" role="group" aria-label="Các thiết lập chính">
+      <div class="control" aria-labelledby="stability">
+        <h4 id="stability">Fix rung</h4>
+        <div class="muted">Giảm rung mô phỏng: điều chỉnh mức ổn định hiển thị</div>
+        <div class="row" style="margin-top:12px;">
+          <div style="flex:1; margin-right:12px;">
+            <input id="stabilityRange" type="range" min="0" max="100" value="40" aria-label="Mức ổn định">
+            <div class="muted" style="margin-top:6px">Mức: <span id="stabilityVal" class="val">40</span></div>
+          </div>
+          <div>
+            <div id="stabilityToggle" class="toggle" role="switch" aria-checked="false" tabindex="0"><div class="knob"></div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="control" aria-labelledby="overcorrection">
+        <h4 id="overcorrection">Fix lố</h4>
+        <div class="muted">Giảm phản hồi quá mức — điều chỉnh ngưỡng</div>
+        <div class="row" style="margin-top:12px;">
+          <div style="flex:1; margin-right:12px;">
+            <input id="overRange" type="range" min="0" max="100" value="30" aria-label="Ngưỡng">
+            <div class="muted" style="margin-top:6px">Ngưỡng: <span id="overVal" class="val">30</span></div>
+          </div>
+          <div>
+            <div id="overToggle" class="toggle" role="switch" aria-checked="false" tabindex="0"><div class="knob"></div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="control" aria-labelledby="sensitivity">
+        <h4 id="sensitivity">Độ nhạy</h4>
+        <div class="muted">Tinh chỉnh độ nhạy (mô phỏng)</div>
+        <div class="row" style="margin-top:12px;">
+          <div style="flex:1; margin-right:12px;">
+            <input id="sensiRange" type="range" min="1" max="200" value="70" aria-label="Độ nhạy">
+            <div class="muted" style="margin-top:6px">Mức: <span id="sensiVal" class="val">70</span></div>
+          </div>
+          <div>
+            <div id="sensiToggle" class="toggle" role="switch" aria-checked="true" tabindex="0"><div class="knob"></div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="control" aria-labelledby="delay">
+        <h4 id="delay">Giảm delay</h4>
+        <div class="muted">Tăng tần suất mô phỏng làm mới (không can thiệp)</div>
+        <div class="row" style="margin-top:12px;">
+          <div style="flex:1; margin-right:12px;">
+            <input id="delayRange" type="range" min="0" max="500" value="120" aria-label="Delay (ms)">
+            <div class="muted" style="margin-top:6px">Delay (ms): <span id="delayVal" class="val">120</span></div>
+          </div>
+          <div>
+            <div id="delayToggle" class="toggle" role="switch" aria-checked="false" tabindex="0"><div class="knob"></div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <h4>Chế độ smoothing (mô phỏng)</h4>
+      <div class="muted">Làm mượt độ chuyển tiếp giữa các bước mô phỏng</div>
+      <div style="margin-top:10px" class="control">
+        <div class="row">
+          <div style="flex:1">
+            <input id="smoothRange" type="range" min="0" max="20" value="6">
+            <div class="muted" style="margin-top:6px">Smoothing: <span id="smoothVal" class="val">6</span></div>
+          </div>
+          <div style="width:110px; text-align:right">
+            <div class="chip">Mode: <strong id="modeText" style="margin-left:8px">Standard</strong></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section" style="display:flex; gap:10px; align-items:center; justify-content:space-between">
+      <div class="muted">Trạng thái mô phỏng</div>
+      <div class="status">
+        <div class="dot ok" id="dotSim"></div><div class="muted" id="simText">Inactive</div>
+      </div>
+    </div>
+  </div>
